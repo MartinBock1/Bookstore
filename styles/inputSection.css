@@ -4,14 +4,20 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+   
 }
 
 .inputSection > input {
    width: 350px;
    margin-right: 20px;
+   background-color: #114758;
+   border-bottom: 3px solid;
+   border-color: #619fb7;
+   color: #fefefe;
 }
 
 .inputSection > img {
    /* width: 30px; */
    height: 20px;
+   
 }

@@ -37,9 +37,11 @@ for (let i = 0; i < books.length; i++) {
     bookGenre.push(books[i].genre);
 }
 
-let CommentsArr;
+let CommentsArr = [];
 for (let i = 0; i < books.length; i++) {
     CommentsArr = books[i].comments;
+
+    console.log(CommentsArr);
 
     for (let j = 0; j < CommentsArr.length; j++) {
         CommentsArr = CommentsArr[j];
@@ -47,6 +49,7 @@ for (let i = 0; i < books.length; i++) {
         bookCommentsComment.push(CommentsArr.comment);
     }
 }
+
 
 function renderBooks() {
     let contentRef = document.getElementById('content');
@@ -56,4 +59,5 @@ function renderBooks() {
         contentRef.innerHTML += getBooksTemplate(i);
     }
 }
+
 

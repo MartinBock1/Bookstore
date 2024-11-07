@@ -51,8 +51,8 @@ function getBooksTemplate(i) {
                         </div>                    
                     </div>
                     <div class="inputSection">
-                        <input type="text"> 
-                        <img src="./assets/icons/paper.png" alt="send message button">                     
+                        <input type="text" id="commentInput"> 
+                        <img onclick="inputComment()" src="./assets/icons/paper.png" alt="send message button">                     
                     </div>
                 </div>
             `;
