@@ -1,0 +1,17 @@
+.inputSection {
+   margin-left: 20px;
+   margin-right: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.inputSection > input {
+   width: 350px;
+   margin-right: 20px;
+}
+
+.inputSection > img {
+   /* width: 30px; */
+   height: 20px;
+}

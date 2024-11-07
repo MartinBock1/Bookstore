@@ -1,0 +1,28 @@
+.commentContainer {
+   display: flex;
+   align-items: flex-start;
+   flex-wrap: wrap;
+}
+
+.keySection {
+   margin-right: 40px;
+}
+
+.valueSection {
+   width: 250px;
+   /* margin-left: 20px; */
+}
+
+.scrollContainer {
+   height: 50px;
+   overflow: auto;
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+   background: #619fb7;
+   border-radius: 10px;
+}

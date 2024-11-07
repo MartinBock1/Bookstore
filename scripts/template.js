@@ -3,41 +3,57 @@ function getBooksTemplate(i) {
     return `
                 <div class="containerBody">
                     <h2>
-                        ${bookTitle[i]}                        
+                        ${bookTitle[i]}                         
                     </h2>
                     <div class="bookImgContainer">
-                        <img src="" alt="picture of a book">  
-                        test
+                        <img src="./assets/icons/book_2.png" alt="picture of a book">  
                     </div>
                     <div class="bookImgContainer">
                         <div class="bookPriceSection">
                             <p class="bookPrice">
-                                ${bookPrice[i]}
+                                ${bookPrice[i].toFixed(2).replace(".", ",")} €
                             </p> 
-                            <div>                       
-                                ${bookLikes[i]}    
-                                ${bookLiked[i]}  
-                                <img src="" alt="heart for likes">  
-                            </div>                  
-                        </div>                    
-                        <p>
-                            Author: ${bookAuthor[i]}                        
-                        </p>
-                        <p>
-                            Erscheinungsjahr: ${bookPublishedYear[i]}                        
-                        </p>
-                        <p>
-                            Genre: ${bookGenre[i]}                        
-                        </p>
+                            <div class="likedSection">                       
+                                ${bookLikes[i]}  
+                                <img src="./assets/icons/heart.png" alt="heart for likes">  
+                            </div>      
+                        </div>   
+                        <div class="bookPriceSection">
+                            <p class="keySection">
+                                Author 
+                            </p> 
+                            <div class="valueSection">                       
+                               : ${bookAuthor[i]}   
+                            </div>    
+                            <p>
+                                Erscheinungsjahr
+                            </p>
+                            <div class="valueSection">
+                               : ${bookPublishedYear[i]}   
+                            </div>      
+                            <p class="keySection">
+                                Genre
+                            </p>
+                            <div class="valueSection">
+                               : ${bookGenre[i]}       
+                            </div>   
+                        </div>    
                     </div>
-                    <p>
-                        <h3>Kommentare:</h3>                        
-                        <p>
-                            [${bookCommentsName[i]}]
-                            : ${bookCommentsComment[i]}    
-                        </p>                                        
-                    </p>
-                    ${bookCommentsName}
+                    <div class="bookImgContainer">
+                        <h3>Kommentare:</h3>    
+                        <div class="commentContainer scrollContainer">
+                                <div class="keySection">
+                                    [${bookCommentsName[i]}]
+                                </div>
+                                <div class="valueSection">
+                                    : ${bookCommentsComment[i]}  
+                                </div>                        
+                        </div>                    
+                    </div>
+                    <div class="inputSection">
+                        <input type="text"> 
+                        <img src="./assets/icons/paper.png" alt="send message button">                     
+                    </div>
                 </div>
             `;
 

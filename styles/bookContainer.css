@@ -1,6 +1,6 @@
 .containerBody {
-   height: 650px;
-   width: 400px;
+   height: 700px;
+   width: 450px;
    background-color: #0d3240;
    border: 1px solid #000;
    border-radius: 20px;
@@ -8,8 +8,6 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   /* justify-content: space-between; */
-   /* padding: 10px; */
    margin: 20px;
 }
 
@@ -23,7 +21,10 @@
 
 .bookImgContainer > img {
    margin-top: 20px;
-   margin-left: 20px;
+   margin-left: auto;
+   margin-right: auto;
+   display: flex;
+   height: 100px;
 }
 
 .bookImgContainer > p {
@@ -31,14 +32,16 @@
    margin-left: 20px;
 }
 
-.bookPriceSection {
-    margin-left: 20px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.bookImgContainer > h3 {
+   /* margin-top: 20px; */
+   margin-left: 20px;
 }
-.bookPrice {
-    color: red;
-    font-size: 18px;
+
+.bookImgContainer > div {
+   margin-top: 15px;
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 15px;
+   /* width: 80%; */
 }
+

@@ -8,7 +8,6 @@ let bookGenre = [];
 let bookCommentsName = [];
 let bookCommentsComment = [];
 
-let secondBookCommentsArr = [];
 
 for (let i = 0; i < books.length; i++) {
     bookTitle.push(books[i].name);
@@ -38,16 +37,16 @@ for (let i = 0; i < books.length; i++) {
     bookGenre.push(books[i].genre);
 }
 
+let CommentsArr;
 for (let i = 0; i < books.length; i++) {
-    let CommentsArr = books[i].comments;
+    CommentsArr = books[i].comments;
+
     for (let j = 0; j < CommentsArr.length; j++) {
-        bookCommentsName = CommentsArr[j].name;
-        bookCommentsComment = CommentsArr[j].comment;
-        console.log(bookCommentsName);
+        CommentsArr = CommentsArr[j];
+        bookCommentsName.push(CommentsArr.name);
+        bookCommentsComment.push(CommentsArr.comment);
     }
 }
-
-// console.log(bookComments);
 
 function renderBooks() {
     let contentRef = document.getElementById('content');
@@ -57,3 +56,4 @@ function renderBooks() {
         contentRef.innerHTML += getBooksTemplate(i);
     }
 }
+
