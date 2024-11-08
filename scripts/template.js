@@ -3,7 +3,7 @@ function getBooksTemplate(i) {
     return `
                 <div class="containerBody">
                     <h2>
-                        ${bookTitle[i]}                         
+                        ${books[i].name}                         
                     </h2>
                     <div class="bookImgContainer">
                         <img src="./assets/icons/book_2.png" alt="picture of a book">  
@@ -11,10 +11,10 @@ function getBooksTemplate(i) {
                     <div class="bookImgContainer">
                         <div class="bookPriceSection">
                             <p class="bookPrice">
-                                ${bookPrice[i].toFixed(2).replace(".", ",")} €
+                                ${books[i].price.toFixed(2).replace(".", ",")} €
                             </p> 
                             <div class="likedSection">                       
-                                ${bookLikes[i]}  
+                                ${books[i].likes}  
                                 <img src="./assets/icons/heart.png" alt="heart for likes">  
                             </div>      
                         </div>   
@@ -23,19 +23,19 @@ function getBooksTemplate(i) {
                                 Author 
                             </p> 
                             <div class="valueSection">                       
-                               : ${bookAuthor[i]}   
+                               : ${books[i].author}   
                             </div>    
                             <p>
                                 Erscheinungsjahr
                             </p>
                             <div class="valueSection">
-                               : ${bookPublishedYear[i]}   
+                               : ${books[i].publishedYear}   
                             </div>      
                             <p class="keySection">
                                 Genre
                             </p>
                             <div class="valueSection">
-                               : ${bookGenre[i]}       
+                               : ${books[i].genre}       
                             </div>   
                         </div>    
                     </div>
@@ -43,7 +43,7 @@ function getBooksTemplate(i) {
                         <h3>Kommentare:</h3>    
                         <div class="commentContainer scrollContainer">
                                 <div class="keySection">
-                                    [${bookCommentsName[i]}]
+                                    [${bookCommentsName[i].name}]
                                 </div>
                                 <div class="valueSection">
                                     : ${bookCommentsComment[i]}  
