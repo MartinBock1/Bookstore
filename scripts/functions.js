@@ -1,11 +1,20 @@
 // todos
 
-function counterFunction() {
-    // erstelle eine counterFunction() für den like button 
+function counterFunction(i) {
+    // erstelle eine counterFunction() für den like button     
+    if (books[i].liked) {
+        books[i].likes--;
+    } else {
+        books[i].likes++;
+    }
+    books[i].liked = !books[i].liked;
+    // counterToLocalStorage();
+    renderBooks();
 }
 
-function counterToLocalStorage() {
+function counterToLocalStorage(i) {
     // speichere das ergebnis in den local storage
+    localStorage.setItem("books.likes", JSON.stringify(books.likes));
 }
 
 function inputComment() {

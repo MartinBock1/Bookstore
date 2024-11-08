@@ -1,5 +1,7 @@
 // create template for notes;
 function getBooksTemplate(i) {
+    heartIcon = books[i].liked ? '❤️' : '🤍';   
+
     return `
                 <div class="containerBody">
                     <h2>
@@ -13,10 +15,15 @@ function getBooksTemplate(i) {
                             <p class="bookPrice">
                                 ${books[i].price.toFixed(2).replace(".", ",")} €
                             </p> 
-                            <div class="likedSection">                       
-                                ${books[i].likes}  
-                                <img src="./assets/icons/heart.png" alt="heart for likes">  
-                            </div>      
+                            <div class="likedSection"> 
+                                <p>                      
+                                    ${books[i].liked}
+                                    ${books[i].likes} Likes
+                                </p>   
+                                <div class="heart" onclick="counterFunction(${i})">    
+                                    ${heartIcon}
+                                </div>       
+                            </div> 
                         </div>   
                         <div class="bookPriceSection">
                             <p class="keySection">
@@ -41,13 +48,7 @@ function getBooksTemplate(i) {
                     </div>
                     <div class="bookImgContainer">
                         <h3>Kommentare:</h3>    
-                        <div class="commentContainer scrollContainer">
-                                <div class="keySection">
-                                    [${bookCommentsName[i].name}]
-                                </div>
-                                <div class="valueSection">
-                                    : ${bookCommentsComment[i]}  
-                                </div>                        
+                        <div class="commentContainer scrollContainer" id="comment${i}">                                                    
                         </div>                    
                     </div>
                     <div class="inputSection">
@@ -56,5 +57,4 @@ function getBooksTemplate(i) {
                     </div>
                 </div>
             `;
-
 }
