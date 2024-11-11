@@ -7,34 +7,39 @@
 
 let bookUserName;
 let bookCommentsComment;
-let CommentsArr;
+let commentsArr;
 let heartIcon;
+let favorites;
 
 function renderBooks() {
     getFromLocalStorage();
     let contentRef = document.getElementById('content');
     contentRef.innerHTML = "";
 
-    // 
+    // first loop to get items from books
     for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
-        CommentsArr = books[indexBooks].comments;
+        commentsArr = books[indexBooks].comments;
         contentRef.innerHTML += getBooksTemplate(indexBooks);
 
-        for (let indexBooksComments = 0; indexBooksComments < CommentsArr.length; indexBooksComments++) {
-            bookUserName = CommentsArr[indexBooksComments].name;
-            bookCommentsComment = CommentsArr[indexBooksComments].comment;
+        // second loop to get items from comments and show them into the separate commentsTemplate
+        for (let indexBooksComments = 0; indexBooksComments < commentsArr.length; indexBooksComments++) {
+            bookUserName = commentsArr[indexBooksComments].name;
+            bookCommentsComment = commentsArr[indexBooksComments].comment;
 
-            document.getElementById(`comment${indexBooks}`).innerHTML += getcommentsTemplate(indexBooks);
+            document.getElementById(`comment${indexBooks}`).innerHTML += getCommentsTemplate(indexBooks);
         }
-    }    
+    }
 }
 
-// save input data to books[i]comments and initialize saving to local storage
+// save input data to books[indexBooks]comments and initialize saving to local storage
 function saveData(indexBooks) {
     bookUserName = "guest"; //hardcoded username for comment input
     let commentInputRef = document.getElementById(`comment_input${indexBooks}`);
     bookCommentsComment = commentInputRef.value;
-    books[indexBooks].comments.push({ name: bookUserName, comment: bookCommentsComment });
+    books[indexBooks].comments.push({
+        name: bookUserName,
+        comment: bookCommentsComment
+    });
 
     saveToLocalStorage();
     renderBooks();
@@ -42,37 +47,29 @@ function saveData(indexBooks) {
     commentInputRef.value = "";
 }
 
+// Stores the books list as a JSON string in local storage.
 function saveToLocalStorage() {
-    let bookData = [];
-    for (let i = 0; i < books.length; i++) {
-        bookData.push({
-            likes: books[i].likes,
-            liked: books[i].liked,
-            comments: books[i].comments
-        });
-    }
-    localStorage.setItem("bookData", JSON.stringify(bookData));
+    localStorage.setItem("books", JSON.stringify(books));
 }
 
+// Read Data from local Storage 
 function getFromLocalStorage() {
-    let bookData = JSON.parse(localStorage.getItem("bookData")) || [];
-    for (let i = 0; i < bookData.length; i++) {
-        if (books[i]) {
-            books[i].likes = bookData[i].likes || 0;
-            books[i].liked = bookData[i].liked || false;
-            books[i].comments = bookData[i].comments || [];
-        }
+    let text = localStorage.getItem("books");
+    let obj = JSON.parse(text);
+
+    if (obj) {
+        books = obj;
     }
 }
 
 // Like Counter
-function counterFunction(i) {
-    if (books[i].liked) {
-        books[i].likes--;
+function counterFunction(indexBooks) {
+    if (books[indexBooks].liked) {
+        books[indexBooks].likes--;
     } else {
-        books[i].likes++;
+        books[indexBooks].likes++;
     }
-    books[i].liked = !books[i].liked;
+    books[indexBooks].liked = !books[indexBooks].liked;
     saveToLocalStorage();
     renderBooks();
 }

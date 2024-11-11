@@ -1,10 +1,10 @@
 // create template for notes;
 function getBooksTemplate(indexBooks) {
-    heartIcon = books[indexBooks].liked ? '❤️' : '🤍';   
+    let heartIcon = books[indexBooks].liked ? '❤️' : '🤍'; 
     return `
                 <div class="containerBody">
                     <h2>
-                        ${books[indexBooks].name}                         
+                        ${books[indexBooks].name}   
                     </h2>
                     <div class="bookImgContainer">
                         <img src="./assets/icons/book_2.png" alt="picture of a book">  
@@ -18,7 +18,7 @@ function getBooksTemplate(indexBooks) {
                                 <p>  
                                     ${books[indexBooks].likes} Likes
                                 </p>   
-                                <div class="heart" onclick="counterFunction(${indexBooks})">    
+                                <div class="heart" title="like/dislike" onclick="counterFunction(${indexBooks})">    
                                     ${heartIcon}
                                 </div>       
                             </div> 
@@ -51,13 +51,13 @@ function getBooksTemplate(indexBooks) {
                     </div>
                     <div class="inputSection">
                         <input type="text" id="comment_input${indexBooks}" placeholder="Schreibe einen Kommentar ..."> 
-                        <img onclick="saveData(${indexBooks})" src="./assets/icons/paper.png" alt="send message button">                     
+                        <img onclick="saveData(${indexBooks})" title="send message" src="./assets/icons/paper.png" alt="send message button">                     
                     </div>
                 </div>
             `;
 }
 
-function getcommentsTemplate() {
+function getCommentsTemplate() {
   return   `
                 <div class="keySectionComment">
                     <b><i>[${bookUserName}]</i></b>
@@ -66,5 +66,4 @@ function getcommentsTemplate() {
                     : ${bookCommentsComment}  
                 </div>    
             `;
-
 }
