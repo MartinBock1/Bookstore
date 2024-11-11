@@ -1,0 +1,83 @@
+@media (max-width: 500px) {
+   .containerBody {
+      /* height: 820px; */
+      width: 400px;
+   }
+
+   .keySection {
+      margin-right: 20px;
+      width: 60px;
+   }
+
+   .valueSection {
+      width: 150px;
+   }
+
+   .inputSection > input {
+      width: 250px;
+   }
+}
+
+@media (max-width: 380px) {
+   header img {
+      width: 250px;
+   }
+
+   .containerBody {
+      /* height: 840px; */
+      width: 330px;
+   }
+
+   p {
+      font-size: 14px;
+   }
+
+   div {
+      font-size: 14px;
+   }
+
+   .bookImgContainer > div {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+   }
+
+   .scrollContainer {
+      display: flex;
+      flex-wrap: wrap;
+      height: 150px;
+      overflow: auto;
+   }
+
+   .keySection {
+      margin-right: 20px;
+      width: 60px;
+   }
+
+   .valueSection {
+      width: 150px;
+   }
+
+   .keySectionComment {
+      margin-right: 20px;
+      width: 180px;
+      margin-bottom: 5px;
+   }
+
+   .valueSectionComment {
+      width: 200px;
+      margin-bottom: 15px;
+   }
+
+    .inputSection {
+      height: 80px;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   /* .inputSection > input {
+      width: 200px;
+      
+   } */
+}

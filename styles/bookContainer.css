@@ -1,6 +1,6 @@
 .containerBody {
-   height: 700px;
-   width: 450px;
+   height: 800px;
+   max-width: 450px;
    background-color: #0d3240;
    border: 1px solid #000;
    border-radius: 20px;

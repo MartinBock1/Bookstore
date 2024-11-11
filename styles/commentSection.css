@@ -5,18 +5,18 @@
    flex-wrap: wrap;
 }
 
-.keySection {
+.keySectionComment {
    margin-right: 40px;
    max-width: 90px;
 }
 
-.valueSection {
+.valueSectionComment {
    width: 250px;
    /* margin-left: 20px; */
 }
 
 .scrollContainer {
-   height: 80px;
+   height: 200px;
    overflow: auto;
 }
 

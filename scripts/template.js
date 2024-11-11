@@ -1,7 +1,6 @@
 // create template for notes;
 function getBooksTemplate(i) {
     heartIcon = books[i].liked ? '❤️' : '🤍';   
-
     return `
                 <div class="containerBody">
                     <h2>
@@ -52,9 +51,21 @@ function getBooksTemplate(i) {
                         </div>                    
                     </div>
                     <div class="inputSection">
-                        <input type="text" id="commentInput"> 
-                        <img onclick="inputComment()" src="./assets/icons/paper.png" alt="send message button">                     
+                        <input type="text" id="comment_input${i}" placeholder="Schreibe einen Kommentar ..."> 
+                        <img onclick="saveData(${i})" src="./assets/icons/paper.png" alt="send message button">                     
                     </div>
                 </div>
             `;
+}
+
+function getcommentsTemplate() {
+  return   `
+                <div class="keySectionComment">
+                    <b><i>[${bookUserName}]</i></b>
+                </div>
+                <div class="valueSectionComment">
+                    : ${bookCommentsComment}  
+                </div>    
+            `;
+
 }
