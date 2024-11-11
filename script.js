@@ -27,6 +27,7 @@ function renderBooks() {
     }    
 }
 
+// save input data to books[i]comments and initialize saving to local storage
 function saveData(i) {
     bookUserName = "guest"; //hardcoded username for comment input
     let commentInputRef = document.getElementById(`comment_input${i}`);
