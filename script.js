@@ -4,6 +4,7 @@
 // show favorites
 // show allready read
 
+
 let bookUserName;
 let bookCommentsComment;
 let CommentsArr;
@@ -14,25 +15,26 @@ function renderBooks() {
     let contentRef = document.getElementById('content');
     contentRef.innerHTML = "";
 
-    for (let i = 0; i < books.length; i++) {
-        CommentsArr = books[i].comments;
-        contentRef.innerHTML += getBooksTemplate(i);
+    // 
+    for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
+        CommentsArr = books[indexBooks].comments;
+        contentRef.innerHTML += getBooksTemplate(indexBooks);
 
-        for (let j = 0; j < CommentsArr.length; j++) {
-            bookUserName = CommentsArr[j].name;
-            bookCommentsComment = CommentsArr[j].comment;
+        for (let indexBooksComments = 0; indexBooksComments < CommentsArr.length; indexBooksComments++) {
+            bookUserName = CommentsArr[indexBooksComments].name;
+            bookCommentsComment = CommentsArr[indexBooksComments].comment;
 
-            document.getElementById(`comment${i}`).innerHTML += getcommentsTemplate(i);
+            document.getElementById(`comment${indexBooks}`).innerHTML += getcommentsTemplate(indexBooks);
         }
     }    
 }
 
 // save input data to books[i]comments and initialize saving to local storage
-function saveData(i) {
+function saveData(indexBooks) {
     bookUserName = "guest"; //hardcoded username for comment input
-    let commentInputRef = document.getElementById(`comment_input${i}`);
+    let commentInputRef = document.getElementById(`comment_input${indexBooks}`);
     bookCommentsComment = commentInputRef.value;
-    books[i].comments.push({ name: bookUserName, comment: bookCommentsComment });
+    books[indexBooks].comments.push({ name: bookUserName, comment: bookCommentsComment });
 
     saveToLocalStorage();
     renderBooks();

@@ -6,13 +6,15 @@
 }
 
 .keySectionComment {
-   margin-right: 40px;
-   max-width: 90px;
+   /* margin-right: 40px; */
+   /* max-width: 90px; */
+   width: 40%;
 }
 
 .valueSectionComment {
-   width: 250px;
+   /* width: 230px; */
    /* margin-left: 20px; */
+   width: 60%;
 }
 
 .scrollContainer {

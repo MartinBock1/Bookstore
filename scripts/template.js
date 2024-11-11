@@ -1,10 +1,10 @@
 // create template for notes;
-function getBooksTemplate(i) {
-    heartIcon = books[i].liked ? '❤️' : '🤍';   
+function getBooksTemplate(indexBooks) {
+    heartIcon = books[indexBooks].liked ? '❤️' : '🤍';   
     return `
                 <div class="containerBody">
                     <h2>
-                        ${books[i].name}                         
+                        ${books[indexBooks].name}                         
                     </h2>
                     <div class="bookImgContainer">
                         <img src="./assets/icons/book_2.png" alt="picture of a book">  
@@ -12,13 +12,13 @@ function getBooksTemplate(i) {
                     <div class="bookImgContainer">
                         <div class="bookPriceSection">
                             <p class="bookPrice">
-                                ${books[i].price.toFixed(2).replace(".", ",")} €
+                                ${books[indexBooks].price.toFixed(2).replace(".", ",")} €
                             </p> 
                             <div class="likedSection"> 
                                 <p>  
-                                    ${books[i].likes} Likes
+                                    ${books[indexBooks].likes} Likes
                                 </p>   
-                                <div class="heart" onclick="counterFunction(${i})">    
+                                <div class="heart" onclick="counterFunction(${indexBooks})">    
                                     ${heartIcon}
                                 </div>       
                             </div> 
@@ -28,30 +28,30 @@ function getBooksTemplate(i) {
                                 Author 
                             </p> 
                             <div class="valueSection">                       
-                               : ${books[i].author}   
+                               : ${books[indexBooks].author}   
                             </div>    
                             <p class="keySection">
                                 Erscheinungsjahr
                             </p>
                             <div class="valueSection">
-                               : ${books[i].publishedYear}   
+                               : ${books[indexBooks].publishedYear}   
                             </div>      
                             <p class="keySection">
                                 Genre
                             </p>
                             <div class="valueSection">
-                               : ${books[i].genre}       
+                               : ${books[indexBooks].genre}       
                             </div>   
                         </div>    
                     </div>
                     <div class="bookImgContainer">
                         <h3>Kommentare:</h3>    
-                        <div class="commentContainer scrollContainer" id="comment${i}">                                                    
+                        <div class="commentContainer scrollContainer" id="comment${indexBooks}">                                                    
                         </div>                    
                     </div>
                     <div class="inputSection">
-                        <input type="text" id="comment_input${i}" placeholder="Schreibe einen Kommentar ..."> 
-                        <img onclick="saveData(${i})" src="./assets/icons/paper.png" alt="send message button">                     
+                        <input type="text" id="comment_input${indexBooks}" placeholder="Schreibe einen Kommentar ..."> 
+                        <img onclick="saveData(${indexBooks})" src="./assets/icons/paper.png" alt="send message button">                     
                     </div>
                 </div>
             `;
