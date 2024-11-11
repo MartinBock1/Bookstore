@@ -15,8 +15,7 @@ function getBooksTemplate(i) {
                                 ${books[i].price.toFixed(2).replace(".", ",")} €
                             </p> 
                             <div class="likedSection"> 
-                                <p>                      
-                                    ${books[i].liked}
+                                <p>  
                                     ${books[i].likes} Likes
                                 </p>   
                                 <div class="heart" onclick="counterFunction(${i})">    
@@ -31,7 +30,7 @@ function getBooksTemplate(i) {
                             <div class="valueSection">                       
                                : ${books[i].author}   
                             </div>    
-                            <p>
+                            <p class="keySection">
                                 Erscheinungsjahr
                             </p>
                             <div class="valueSection">
