@@ -1,18 +1,7 @@
 @media (max-width: 500px) {
    .containerBody {
-      /* height: 820px; */
       width: 400px;
    }
-
-   /* .keySection {
-      margin-right: 5px;
-      width: 250px;
-      border: 1px solid;
-   }
-
-   .valueSection {
-      width: 200px;
-   } */
 
    .inputSection > input {
       width: 250px;
@@ -78,10 +67,6 @@
    }
 
     .inputSection {
-      /* flex-wrap: wrap; */
-      /* justify-content: center; */
-      /* align-items: center; */
-      /* margin-left: 5px; */
       margin-right: 5px;
    }
 }
