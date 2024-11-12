@@ -18,4 +18,5 @@
 
 .inputSection > img {
    height: 20px;   
+   cursor: pointer;
 }

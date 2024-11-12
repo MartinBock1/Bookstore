@@ -28,7 +28,12 @@
 
 .likedSection > img {
    width: 35px;
-   height: 35px;
+   height: 35px;   
+}
+
+.heart {
+font-size: 32px;
+cursor: pointer;
 }
 
 .keySection {

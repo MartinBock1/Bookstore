@@ -19,7 +19,7 @@ function getBooksTemplate(indexBooks) {
                                     ${books[indexBooks].likes} Likes
                                 </p>   
                                 <div class="heart" title="like/dislike" onclick="counterFunction(${indexBooks})">    
-                                    ${heartIcon}
+                                   ${heartIcon}
                                 </div>       
                             </div> 
                         </div>   
